@@ -23,9 +23,17 @@ class Crack():
         email = self.wait.until(EC.presence_of_element_located((By.ID, 'login_phone')))
         psw = self.wait.until(EC.presence_of_element_located((By.ID, 'login_password')))
         name = self.wait.until(EC.presence_of_element_located((By.ID, 'login_fullname')))
-        btn = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'button')))
+        
         email.send_keys(self.email)
         psw.send_keys(self.psw)
         name.send_keys(self.name)
+        
+        
+        
+    def submit(self, verify_code):
+        verify = self.wait.until(EC.presence_of_element_located((By.ID, 'login_verify')))
+        verify.send_keys(verify_code)
+        btn = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'button')))
         btn.click()
-        self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'signup_box')))
+        #self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'signup_box')))
+        self.browser.quit()
