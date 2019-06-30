@@ -20,7 +20,7 @@ class Crack():
         self.browser.get(self.url)
         btn = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'button')))
         btn.click()
-        email = self.wait.until(EC.presence_of_element_located((By.ID, 'login_email')))
+        email = self.wait.until(EC.presence_of_element_located((By.ID, 'login_phone')))
         psw = self.wait.until(EC.presence_of_element_located((By.ID, 'login_password')))
         name = self.wait.until(EC.presence_of_element_located((By.ID, 'login_fullname')))
         btn = self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'button')))
